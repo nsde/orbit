@@ -1,0 +1,29 @@
+// Contains additional style
+
+@import '_vars.sass'
+@import '_helpers.sass'
+
+header.grid
+    display: grid
+    // grid-template-columns: auto auto auto
+
+    a
+        color: inherit
+        text-decoration: none
+
+    div.featured
+        // box-shadow: 0 0 10px $shadow
+        margin: 1rem
+        width: 100%
+        cursor: pointer
+
+        &:hover
+            opacity: 0.8
+
+        img
+            object-fit: cover
+            height: 300px
+
+@media (max-width: 767px)
+    header.grid div.featured img
+        width: 100%

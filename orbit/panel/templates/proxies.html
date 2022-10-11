@@ -1,0 +1,38 @@
+{% with title="Proxies" %}
+    {% include "components/top.html" %}
+{% endwith %}
+
+{% with page="proxies" %}
+    {% include "components/sidebar.html" %}
+{% endwith %}
+
+<main class="has-sidebar">
+    <h1>Free Proxies</h1>
+
+    {{ data | safe }}
+
+    <hr>
+    <sup>¹ According to specification</sup><br>
+    <sup>² As measured from our server in Nuremberg, Germany.</sup>
+</main>
+
+<script type="text/javascript" src="/static/scripts/dt.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/kt-2.7.0/r-2.3.0/datatables.min.css"/> 
+
+<script>
+    $(document).ready( function () {
+        $('#demo-table').DataTable();
+    } );
+
+
+    // ProxyCheck
+
+    const proxies = document.queryAll('.proxy-address')
+    for (let proxy of proxies) {
+        proxy.style.opacity = '0.3';
+        proxy.style.cursor = 'progress';
+
+    }
+</script>
+
+{% include "components/end.html" %}

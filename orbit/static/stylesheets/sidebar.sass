@@ -1,0 +1,146 @@
+// Contains base style
+
+@import '_vars.sass'
+@import '_helpers.sass'
+
+div.sidebar
+    height: 100%
+    position: fixed
+    z-index: 500
+    top: 0
+    left: 0
+    resize: both
+    overflow: hidden
+    width: $sidebar-width
+    padding: 1rem
+    background-color: $sidebar
+    box-shadow: 5px 0px 10px $shadow, 5px 0px 20px $shadow, 5px 0px 20px $shadow
+
+    hr
+        background: $bg !important
+
+    h1, a, strong, .item, hr
+        color: white
+
+    h1
+        font-size: 2rem
+        font-weight: 200
+        margin-top: 0
+        margin-bottom: 0
+        position: relative
+
+        span
+            padding-left: 5px
+            font-size: 1.3rem
+            position: relative
+            top: -5px
+
+    i.toggle-sidebar
+        color: white
+        font-size: 2rem
+        position: absolute
+        right: .5rem
+        top: 5px
+        cursor: pointer
+
+        &:hover
+            opacity: 0.5
+        
+        &.flip
+            transform: rotate(180deg)
+
+    hr
+        border: none
+        height: 1px
+        margin-top: 1rem
+        margin-bottom: 1rem
+        background: $text-light
+        opacity: 0.4
+
+    a:not(span.bottom a)
+        text-decoration: none
+
+    div.item
+        // border-radius: 5px
+        padding: 0.8rem
+        opacity: 0.7
+
+        i
+            padding-right: 10px
+
+        &.active
+            box-shadow: 0 0px 10px $shadow
+            border-left: 3px solid white
+            background: $primary
+            opacity: 1
+
+            animation: opacity-effect .5s
+
+        &.sub
+            margin-left: 2rem
+
+        &:hover
+            filter: brightness(1.1)
+
+        i.external
+            opacity: 0.4
+            margin-left: 5px
+
+    div.items
+        height: calc(100% - 260px)
+        overflow-x: hidden !important
+        overflow-y: auto
+        scrollbar-color: white transparent
+
+    div.bottom
+        margin-bottom: 1rem
+        z-index: 600
+        width: 89%
+        position: absolute
+        bottom: 0
+        background: $sidebar
+
+main
+    margin: 3rem
+
+    &.has-sidebar
+        margin-left: $sidebar-width
+        padding-left: 5rem
+
+    a
+        color: $primary
+
+@media (max-width: 770px)
+
+body.with-closed-sidebar
+    main.has-sidebar
+        margin-left: 3rem
+
+    div.sidebar
+        width: 3rem
+
+        div.item.sub
+            opacity: 0.5
+            padding-top: 0
+            padding-bottom: 0
+            margin-left: 1px
+        
+        div.item.sub
+            position: relative
+            left: 10px
+
+            *
+                font-size: small !important
+
+        div.item i.external
+            opacity: 0.4
+            margin-left: 1.5rem
+            position: relative
+            top: -10px
+            font-size: 1rem
+
+        span, h1, div.bottom, hr
+            display: none
+
+        div.item i
+            font-size: x-large

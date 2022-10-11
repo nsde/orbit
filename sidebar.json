@@ -1,0 +1,20 @@
+[
+    {
+        "path": "home",
+        "icon": "house",
+        "name": "Home"
+    },
+    {
+        "path": "proxies",
+        "icon": "shield-lock",
+        "name": "ProxyList"
+    },
+    {
+        "path": "redirect/to/https://github.com/nsde/orbit/blob/master/README.md",
+        "icon": "journal-text",
+        "name": "Help",
+        "is_external": true
+    }
+]
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }} · Orbit</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% for stylesheet in ['orbitium', 'space', 'helpers', 'sidebar', 'bi'] %}
+        <link href="{{ url_for('static', filename='stylesheets/' + stylesheet + '.css') }}" rel="stylesheet">
+    {% endfor %}
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">    
+</head>
+
+<body class="{{ 'with-closed-sidebar' if is_sidebar_closed else '' }}">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <div class="alert fg-white bg-red-glow">
+                        <i class="bi bi-exclamation-octagon-fill"></i>
+                        <strong>Error</strong>
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert fg-white bg-blue-glow">
+                        <i class="bi bi-info-circle-fill"></i>
+                        <strong>Info</strong>
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+      
+    <div class="floating-button" onclick="openPopUp()">
+        <i class="bi bi-question-circle"></i>
+    </div>
+    <div id="myPopUp" class="overlay">
+        <a class="close-btn" onclick="closePopUp()">&times;</a>
+        <div class="overlay-content">
+            <h1>Help Page</h1>
+            <p>Please refer to the <a href="/docs">documentation</a> for help and information.</p>
+            <p>
+                The content of the documentation can be configured by editing the markdown file
+                <code>documentation.md</code> in the root directory of this project.
+                The changes should be visible instantly after saving the file.
+            </p>
+        </div>
+    </div>  

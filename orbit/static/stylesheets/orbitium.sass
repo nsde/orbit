@@ -1,0 +1,600 @@
+@import '_vars.sass'
+@import '_helpers.sass'
+
+html
+    scroll-behavior: smooth
+
+*
+    transition: 0.3s
+
+body
+    color: $text
+    background-color: $bg
+    margin: 0
+    margin-right: 1rem
+
+a
+    color: $text
+    text-decoration: none
+
+    &:hover
+        text-decoration: underline
+
+@keyframes opacity-effect
+    from
+        opacity: 0
+    to
+        opacity: 1
+
+@media (max-width: 570px)
+    div.panels, div.panels div.panel
+        display: block
+        margin-bottom: 1rem
+
+    div.action button
+        margin-bottom: 1rem
+
+@media (max-width: 1000px)
+    div.panels, div.panels div.panel
+        grid-template-columns: auto auto
+
+@keyframes slide-in
+    from
+        transform: translateX(-1000px)
+    to
+        transform: translateX(0px)
+
+div.alert
+    width: fit-content
+    padding: 1rem
+    border-left: 3px solid green
+    animation: slide-in 1s ease-ou
+    background: $bg-light
+    box-shadow: 0 5px 10px $shadow
+
+    & strong::after
+        content: " · "
+
+    &.red
+        border-left-color: $red
+    &.yellow
+        border-left-color: $yellow
+    &.green
+        border-left-color: $green
+    &.blue
+        border-left-color: $blue
+
+    &.no-1
+        animation-duration: 0.3s
+    &.no-2
+        animation-duration: 0.5s
+    &.no-3
+        animation-duration: 0.7s
+    &.no-4
+        animation-duration: 0.9s
+    &.no-5
+        animation-duration: 1.1s
+
+    a
+        color: $text
+        text-decoration: underline
+
+div.panels
+    display: grid
+    grid-auto-columns: 1fr
+    grid-auto-flow: column
+    grid-template-columns: auto auto auto auto
+    gap: 1rem
+
+    button
+        background: none
+
+    &.inactive .panel
+        opacity: 0.2 !important
+        filter: blur(2px)
+
+    &>a
+        text-decoration: none
+
+    .panel
+        padding: 1rem
+        padding-bottom: 2rem
+
+        height: 5rem
+        color: $text
+        background: $gradient-accent
+        border-radius: 15px
+
+        i
+            font-size: xx-large
+
+        span.title
+            display: block
+
+        span.value
+            font-size: x-large
+            font-weight: 600
+
+        &:hover
+            cursor: pointer
+            transform: scale(1.05)
+            filter: brightness(1.2)
+
+    &.inactive .panel:hover
+        filter: blur(0px)
+
+mark
+    color: white
+    padding-left: 2px
+    padding-right: 2px
+    background-color: #ffffff18
+    border-radius: 5px
+
+input, button
+    color: $text
+    border: none
+    font-size: large
+    padding: 0.5rem
+    margin-top: 0.5rem
+    background: $bg-light
+    border-radius: 7px
+    border: 1px solid $border
+    outline: 3px solid $transparent
+
+    transition: outline .1s
+
+    &:focus:not(button:not(.primary))
+        outline: 4px solid $primary-transculent
+
+form.form-container
+    width: 400px
+    margin: 0 auto
+
+    text-align: center
+
+    label
+        margin-top: .5rem
+        text-align: left
+        display: inline-block
+
+    *
+        width: 100%
+
+@media (max-width: 800px)
+    form.form-container
+        width: 100%
+
+div.inline
+    display: inline
+
+    > *
+        display: inline
+
+button
+    transition: 0.3s
+
+    &:hover
+        opacity: 0.8
+        cursor: pointer
+
+    &:active:not(.primary)
+        transform: translateY(2px) // 3D-Clicking Effect
+
+    &.primary
+        color: white
+        font-size: large
+        background: $primary
+
+    &.wide
+        width: calc(100% + 1rem)
+
+fieldset // often used for input fields
+    width: fit-content // use automatically correct width
+    margin-bottom: 1rem
+    border: 1px solid $semi-transparent
+
+    legend
+        font-weight: bold
+        padding-left: 5px
+        padding-right: 5px
+
+    span
+        display: block
+        margin-top: 5px
+        margin-bottom: 5px
+
+.profile-pic
+    border-radius: 50%
+    height: 40px
+    position: relative
+    top: 10px
+    margin-right: 10px
+
+.actions
+    display: inline
+
+    .action
+        display: inline
+
+        button
+            padding: 1rem
+            margin-right: 1rem
+            font-size: large
+            font-weight: bold
+
+.hero
+    background-image: url('/static/assets/bg.png')
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+
+    box-shadow: 0 10px 50px $shadow
+
+    height: 100vh
+    transition: 3s
+    text-align: center
+
+    .branding
+        margin-top: 0
+        opacity: 0.5
+        font-weight: normal
+
+    .hero-text
+        font-size: 4rem
+
+        mark
+            color: white
+            background-color: $primary
+
+    button
+        font-size: 3rem
+        background: none
+
+    &:hover
+        filter: hue-rotate(60deg)
+
+@keyframes gradient
+    0%
+        filter: hue-rotate(0deg)
+    100%
+        filter: hue-rotate(70deg)
+
+select
+    color: $text
+    border: none
+    font-size: large
+    padding: 5px
+    background-color: $input
+
+input[type=checkbox]
+    transform: scale(1.5)
+    transition: 1
+
+    &:hover
+        opacity: 0.8
+        cursor: pointer
+
+    &:active
+        opacity: 0.3
+
+    &:checked
+        box-shadow: 0 0 10px $primary
+        filter: hue-rotate(35deg) saturate(2)
+
+    &:not(:checked)
+        filter: saturate(2)
+        // box-shadow: 0 0 5px $red
+
+div.gallery
+    display: grid
+    grid-gap: 2rem
+    align-items: start
+    box-sizing: border-box
+    grid-template-columns: auto auto auto auto
+
+    &>a
+        color: $text
+        text-decoration: none
+
+    .item
+        padding: 1rem
+        background: $bg-dark
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.19)
+
+        .title *
+            display: inline-block
+            vertical-align: text-top
+
+        &:hover
+            cursor: pointer
+            transform: scale(1.05)
+            filter: brightness(1.1)
+
+        h3
+            margin-top: 0
+            padding: 0.5rem
+            font-size: 1.4rem
+
+            mark
+                color: $text
+                padding: 5px
+                background: $gradient-accent
+
+.clickable
+    &:hover
+        opacity: 0.9
+        cursor: pointer
+
+    &:active
+        opacity: 0.3
+
+@keyframes loading-animation
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+div.loading-container
+    cursor: progress
+    padding-top: 1rem
+    padding-bottom: 1rem
+    display: flex
+    justify-content: center
+
+    .loading
+        height: 50px
+        text-align: center
+        animation: loading-animation 1s ease infinite
+
+    .loading.ease
+        animation: loading-animation 1s linear infinite
+
+div.table-of-contents
+    padding: 1rem
+    background: white
+    max-width: fit-content
+    border-left: 2px solid $primary
+    box-shadow: 0 5px 10px $shadow
+
+    .title
+        font-weight: bold
+
+    li.active
+        text-decoration: underline
+
+code
+    margin: 3px
+    padding: 3px
+    font-size: 1rem
+    color: $text-light
+    box-shadow: 0 0 5px $shadow
+
+@keyframes dot-pulse
+    0%
+        opacity: 0.5
+
+    70%
+        opacity: 0
+        transform: scale(1.6)
+
+    100%
+        opacity: 0
+
+.active-dot
+    width: 2rem
+    height: 2rem
+    color: $primary
+    background: $primary
+    border-radius: 50%
+
+    transfrom: none
+    position: relative
+    box-shadow: 0 0 10px $primary
+
+.active-dot::after
+    content: ""
+
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+    opacity: 1
+    position: absolute
+    border-radius: 50%
+    background: currentColor
+
+    color: $primary
+    animation: dot-pulse 1s infinite
+    // animation-direction: alternate
+
+div.card
+    margin: 1rem
+    margin-left: 0
+
+    padding: 1.5rem
+    background: white
+
+    box-shadow: 0 5px 10px $shadow
+
+    &.narrow
+        max-width: fit-content
+    
+    &.wide
+        width: 100%
+    
+    h1, h2, h3, h4, h5, h6
+        margin-top: 0
+        margin-bottom: 0
+        font-weight: normal
+
+    position: relative
+    > i
+        font-size: 5rem
+        opacity: 0.2
+        filter: saturate(0)
+        position: absolute
+        right: 1rem
+        text-align: right
+
+    p
+        font-weight: 300
+        margin-top: 1rem
+        margin-bottom: 1rem
+
+    &.chart
+        &.up
+            i
+                color: $green
+
+        &.down
+            i
+                color: $red
+
+        p
+            font-size: 2rem
+
+    button
+        margin: 0
+
+div.auto-grid
+    display: grid
+    grid-template-rows: 100px 200px
+    grid-gap: 4rem
+    grid-template-columns: auto auto
+
+    &>div
+        grid-column: auto
+        height: max-content
+        width: 100%
+    
+    &.with-2-columns
+        grid-template-columns: auto auto
+    &.with-3-columns
+        grid-template-columns: auto auto auto
+    &.with-4-columns
+        grid-template-columns: auto auto auto auto
+    &.with-5-columns
+        grid-template-columns: auto auto auto auto auto
+
+@media (max-width: 767px)
+    div.auto-grid
+        display: block
+
+div.floating-button
+    z-index: 10
+    color: white
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background: $primary
+    box-shadow: 0 0 10px $primary
+
+    top: 10px
+    right: 10px
+    display: flex
+    position: fixed
+
+    i
+        font-size: x-large
+        position: absolute
+        top: 10px
+        left: 13px
+
+    &:hover
+        cursor: pointer
+        box-shadow: 0 0 20px $primary
+
+    &:active
+        border-bottom: 0px solid $shadow
+
+div.overlay-content
+    &, *
+        color: white
+    top: 25%
+    width: 50%
+    margin-top: 30px
+    text-align: center
+    position: relative
+    // display: inline
+    margin-left: auto
+    margin-right: auto
+    padding-left: 16rem
+
+div.overlay
+    height: 100%
+    width: 0
+    position: fixed
+    z-index: 200
+    top: 0
+    left: 0
+    background-color: #141c28e6
+    overflow-x: hidden
+    transition: 0.5s
+
+    a
+        text-decoration: none
+        color: $secondary
+        transition: 0.3s
+
+    a:hover, a:focus
+        opacity: 0.8
+
+    .close-btn
+        top: 20px
+        right: 45px
+        font-size: 60px
+        cursor: pointer
+        position: absolute
+
+footer
+    color: $text-light
+    text-align: center
+    margin-bottom: 2rem
+    opacity: 0.8
+
+    .content
+        padding: 1rem
+        width: 70%
+        margin-left: 6rem
+
+    hr
+        width: 50%
+        color: $border
+        opacity: 0.5
+
+    p
+        margin-top: 2rem
+        margin-bottom: 0
+
+    a
+        text-decoration: underline
+        color: $primary
+        padding: 10px
+        transition: 0.3s
+
+        &:hover
+            color: $bg-dark
+
+@media (min-width: 770px)
+    footer
+        margin-left: 18.5rem
+
+#demo-table_wrapper
+    *, &
+        color: $text-light !important
+
+table.stats
+    font-size: larger
+    padding: 1rem
+
+    thead
+        text-align: left
+
+        tr
+            color: $primary
+
+    td
+        padding: 1rem
+        margin: 1rem

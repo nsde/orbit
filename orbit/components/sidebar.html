@@ -1,0 +1,40 @@
+<div class="sidebar" id="sidebar">
+    <h2>
+        <i class="{{ '' if is_sidebar_closed else 'flipped' }} bi bi-chevron-left toggle-sidebar" id="sidebarToggle" onclick="toggleSidebar();"></i>
+    </h2>
+    <h1>
+        <i class="bi bi-fire"></i>
+        <span>
+            Orbit Panel
+        </span>
+    </h1>
+    <hr>
+    <span class="fg-accent"><strong>Home</strong></span>
+    <br>
+    <div class="items">
+        {% for item in navigation %}
+            <a href="/{{ item.path }}">
+                <div class="item{{ ' active' if page == item.path else '' }}{{ ' sub' if '#' in item.path else ''}}">
+                    <i class="bi bi-{{ item.icon }}"></i>
+                    <span>{{ item.name }}</span>
+                    {% if item.is_external %}
+                        <i class="external bi bi-box-arrow-up-right"></i>
+                    {% endif %}
+                    {% if item.is_beta %}
+                        <i class="external bi bi-gem"></i>
+                    {% endif %}
+                </div>
+            </a>
+            {% if not item %}
+                <hr>
+            {% endif %}
+        {% endfor %}
+    </div>
+        
+        <div class="bottom">
+            <hr>
+        <a href="https://onlix.me">by ONLIX</a>
+    </div>
+</div>
+
+<script src="/static/scripts/sidebar.js"></script>

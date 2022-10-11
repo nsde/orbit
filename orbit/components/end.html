@@ -1,0 +1,19 @@
+        <footer>
+            <div class="content">
+                <hr>
+                <p>© 2022 ONLIX Services. Licensed under MIT.</p>
+                <br>
+                <a href="https://onlix.me/legal#privacy">Privacy Policy</a>
+                <a href="https://onlix.me/legal#tos">Terms of Service</a>
+            </div>
+        </footer>
+        {% for script in ['reqs', 'cookie', 'hotkeys'] %}
+            <script type="text/javascript" src="{{ url_for('static', filename='scripts/' + script + '.js') }}"></script>
+        {% endfor %}
+        <script>
+            // PopUp
+            function openPopUp()    {document.getElementById("myPopUp").style.width = "100%";}
+            function closePopUp()   {document.getElementById("myPopUp").style.width = "0%";}
+        </script>
+    </body>
+</html>

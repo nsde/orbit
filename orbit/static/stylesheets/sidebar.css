@@ -1,0 +1,233 @@
+:root, * {
+  font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  :root, * {
+    font-family: "Inter var", sans-serif;
+  }
+}
+.fg-white {
+  color: white !important;
+}
+
+.fg-red {
+  color: rgba(233, 58, 58, 0.8588235294) !important;
+}
+
+.fg-yellow {
+  color: rgba(216, 152, 50, 0.7725490196) !important;
+}
+
+.fg-green {
+  color: rgba(13, 167, 95, 0.7529411765) !important;
+}
+
+.fg-blue {
+  color: rgba(65, 92, 200, 0.8823529412) !important;
+}
+
+.bg-red {
+  background: rgba(233, 58, 58, 0.8588235294) !important;
+}
+
+.bg-yellow {
+  background: rgba(216, 152, 50, 0.7725490196) !important;
+}
+
+.bg-green {
+  background: rgba(13, 167, 95, 0.7529411765) !important;
+}
+
+.bg-blue {
+  background: rgba(65, 92, 200, 0.8823529412) !important;
+}
+
+.bg-red-glow {
+  box-shadow: 0 0 10px rgba(233, 58, 58, 0.8588235294);
+  background: rgba(233, 58, 58, 0.8588235294) !important;
+}
+
+.bg-yellow-glow {
+  box-shadow: 0 0 10px rgba(216, 152, 50, 0.7725490196);
+  background: rgba(216, 152, 50, 0.7725490196) !important;
+}
+
+.bg-green-glow {
+  box-shadow: 0 0 10px rgba(13, 167, 95, 0.7529411765);
+  background: rgba(13, 167, 95, 0.7529411765) !important;
+}
+
+.bg-blue-glow {
+  box-shadow: 0 0 10px rgba(65, 92, 200, 0.8823529412);
+  background: rgba(65, 92, 200, 0.8823529412) !important;
+}
+
+.gd-special {
+  background: linear-gradient(45deg, rgba(134, 53, 255, 0.97) 0%, #2954ff 48%, rgba(118, 27, 255, 0.92) 100%) !important;
+}
+
+.gd-green {
+  background: linear-gradient(45deg, rgba(47, 196, 82, 0.9764705882) 0%, rgba(47, 196, 79, 0.7215686275) 48%, rgba(86, 208, 65, 0.7215686275) 100%) !important;
+}
+
+.gd-teal {
+  background: linear-gradient(45deg, rgba(17, 123, 103, 0.9764705882) 0%, rgba(37, 151, 134, 0.7215686275) 48%, rgba(36, 155, 137, 0.7215686275) 100%) !important;
+}
+
+.gd-yellow {
+  background: linear-gradient(45deg, rgba(123, 95, 17, 0.9764705882) 0%, #8c5e13 48%, rgba(185, 125, 14, 0.9294117647) 100%) !important;
+}
+
+.gd-red {
+  background: linear-gradient(45deg, rgba(123, 31, 17, 0.9764705882) 0%, #8c1d13 48%, rgba(185, 40, 14, 0.9294117647) 100%) !important;
+}
+
+.gd-light {
+  background: linear-gradient(45deg, rgba(126, 118, 56, 0.9764705882) 0%, rgba(175, 171, 66, 0.8823529412) 48%, rgba(155, 141, 36, 0.9294117647) 100%) !important;
+}
+
+.gd-dark {
+  background: linear-gradient(45deg, rgba(44, 37, 58, 0.9764705882) 0%, #1f1b3a 48%, rgba(28, 24, 57, 0.9294117647) 100%) !important;
+}
+
+div.sidebar {
+  height: 100%;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  resize: both;
+  overflow: hidden;
+  width: 16rem;
+  padding: 1rem;
+  background-color: #513567;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2078431373), 5px 0px 20px rgba(0, 0, 0, 0.2078431373), 5px 0px 20px rgba(0, 0, 0, 0.2078431373);
+}
+div.sidebar hr {
+  background: #121116 !important;
+}
+div.sidebar h1, div.sidebar a, div.sidebar strong, div.sidebar .item, div.sidebar hr {
+  color: white;
+}
+div.sidebar h1 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+}
+div.sidebar h1 span {
+  padding-left: 5px;
+  font-size: 1.3rem;
+  position: relative;
+  top: -5px;
+}
+div.sidebar i.toggle-sidebar {
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 5px;
+  cursor: pointer;
+}
+div.sidebar i.toggle-sidebar:hover {
+  opacity: 0.5;
+}
+div.sidebar i.toggle-sidebar.flip {
+  transform: rotate(180deg);
+}
+div.sidebar hr {
+  border: none;
+  height: 1px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: #cacaca;
+  opacity: 0.4;
+}
+div.sidebar a:not(span.bottom a) {
+  text-decoration: none;
+}
+div.sidebar div.item {
+  padding: 0.8rem;
+  opacity: 0.7;
+}
+div.sidebar div.item i {
+  padding-right: 10px;
+}
+div.sidebar div.item.active {
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2078431373);
+  border-left: 3px solid white;
+  background: #8e58e3;
+  opacity: 1;
+  -webkit-animation: opacity-effect 0.5s;
+          animation: opacity-effect 0.5s;
+}
+div.sidebar div.item.sub {
+  margin-left: 2rem;
+}
+div.sidebar div.item:hover {
+  filter: brightness(1.1);
+}
+div.sidebar div.item i.external {
+  opacity: 0.4;
+  margin-left: 5px;
+}
+div.sidebar div.items {
+  height: calc(100% - 260px);
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  scrollbar-color: white transparent;
+}
+div.sidebar div.bottom {
+  margin-bottom: 1rem;
+  z-index: 600;
+  width: 89%;
+  position: absolute;
+  bottom: 0;
+  background: #513567;
+}
+
+main {
+  margin: 3rem;
+}
+main.has-sidebar {
+  margin-left: 16rem;
+  padding-left: 5rem;
+}
+main a {
+  color: #8e58e3;
+}
+
+body.with-closed-sidebar main.has-sidebar {
+  margin-left: 3rem;
+}
+body.with-closed-sidebar div.sidebar {
+  width: 3rem;
+}
+body.with-closed-sidebar div.sidebar div.item.sub {
+  opacity: 0.5;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 1px;
+}
+body.with-closed-sidebar div.sidebar div.item.sub {
+  position: relative;
+  left: 10px;
+}
+body.with-closed-sidebar div.sidebar div.item.sub * {
+  font-size: small !important;
+}
+body.with-closed-sidebar div.sidebar div.item i.external {
+  opacity: 0.4;
+  margin-left: 1.5rem;
+  position: relative;
+  top: -10px;
+  font-size: 1rem;
+}
+body.with-closed-sidebar div.sidebar span, body.with-closed-sidebar div.sidebar h1, body.with-closed-sidebar div.sidebar div.bottom, body.with-closed-sidebar div.sidebar hr {
+  display: none;
+}
+body.with-closed-sidebar div.sidebar div.item i {
+  font-size: x-large;
+}/*# sourceMappingURL=sidebar.css.map */

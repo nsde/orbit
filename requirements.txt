@@ -1,0 +1,5 @@
+lxml
+Flask
+pandas
+proxy_list
+python-dotenv

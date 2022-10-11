@@ -7,7 +7,34 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "**/.css": true,
-        "**/.css.map": true
+        "**/.css.map": true,
+        ".vscode": true,
+        "templating/__pycache__": true,
+        "templating/panel/__pycache__": true,
+        "orbit/__pycache__": true,
+        "orbit/static/stylesheets/orbitium.css": true,
+        "orbit/static/stylesheets/orbitium.css.map": true,
+        "orbit/static/stylesheets/sidebar.css.map": true,
+        "orbit/static/stylesheets/sidebar.css": true,
+        "orbit/panel/__pycache__": true,
+        "orbit/forms/__pycache__": true,
+        "orbit/static/stylesheets/space.css": true,
+        "orbit/static/stylesheets/space.css.map": true,
+        "orbit/static/stylesheets/bi.css": true
     },
-    "hide-files.files": []
+    "hide-files.files": [
+        ".vscode",
+        "templating/__pycache__",
+        "templating/panel/__pycache__",
+        "orbit/__pycache__",
+        "orbit/static/stylesheets/orbitium.css",
+        "orbit/static/stylesheets/orbitium.css.map",
+        "orbit/static/stylesheets/sidebar.css.map",
+        "orbit/static/stylesheets/sidebar.css",
+        "orbit/panel/__pycache__",
+        "orbit/forms/__pycache__",
+        "orbit/static/stylesheets/space.css",
+        "orbit/static/stylesheets/space.css.map",
+        "orbit/static/stylesheets/bi.css"
+    ]
 }

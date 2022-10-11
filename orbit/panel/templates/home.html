@@ -1,0 +1,29 @@
+{% with title="Home" %}
+    {% include "components/top.html" %}
+{% endwith %}
+
+{% with page="home" %}
+    {% include "components/sidebar.html" %}
+{% endwith %}
+
+<main class="has-sidebar">
+    <div class="alert blue no-1">
+        <i class="bi bi-info-circle"></i>
+        <strong>Coming Soon!</strong>
+        Project Orbit is under construction.
+    </div>
+    <h1>Project Orbit</h1>
+    <h2>Explore</h2>
+
+    <header class="grid">
+        <a href="/proxies">
+            <div class="featured">
+                <img src="/static/assets/earth.jpg" alt="World map with network-like connections">
+                <h3>Proxy List</h3>
+                <p>Finally an open source, free and legit proxy list with all infos you need!</p>
+            </div>
+        </a>
+    </header>
+
+</main>
+{% include "components/end.html" %}
