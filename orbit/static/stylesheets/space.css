@@ -93,6 +93,7 @@
 
 header.grid {
   display: grid;
+  grid-template-columns: auto auto auto;
 }
 header.grid a {
   color: inherit;
@@ -107,6 +108,7 @@ header.grid div.featured:hover {
   opacity: 0.8;
 }
 header.grid div.featured img {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   height: 300px;
@@ -116,4 +118,69 @@ header.grid div.featured img {
   header.grid div.featured img {
     width: 100%;
   }
+}
+div.embed {
+  text-align: center;
+  overflow: hidden;
+}
+div.embed .embed-title {
+  margin-block: 0.5rem;
+}
+
+.info-text {
+  opacity: 0.5;
+  margin-block: 0.5rem;
+}
+
+div.mini-list {
+  width: 100%;
+  display: flex;
+  flex: 1 1 0px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+div.mini-list div.mini-item {
+  margin: 1rem;
+  width: 100px;
+  text-align: center;
+}
+div.mini-list div.mini-item img, div.mini-list div.mini-item svg {
+  border-radius: 50%;
+}
+
+code {
+  font-family: monospace;
+}
+
+input.slim {
+  font-size: 1.2rem;
+  width: 17ch;
+}
+
+@-webkit-keyframes blitz {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.137254902);
+  }
+  to {
+    text-shadow: none;
+  }
+}
+
+@keyframes blitz {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.137254902);
+  }
+  to {
+    text-shadow: none;
+  }
+}
+.glow-blitz {
+  cursor: pointer;
+}
+.glow-blitz:hover {
+  color: #863bc8;
+}
+.glow-blitz:active {
+  color: #8e58e3;
 }/*# sourceMappingURL=space.css.map */

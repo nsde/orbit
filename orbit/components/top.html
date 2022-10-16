@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% for stylesheet in ['orbitium', 'space', 'helpers', 'sidebar', 'bi'] %}
+    {% for stylesheet in ['orbitium', 'space', 'sidebar', 'bi'] %}
         <link href="{{ url_for('static', filename='stylesheets/' + stylesheet + '.css') }}" rel="stylesheet">
     {% endfor %}
 
@@ -41,12 +41,11 @@
     <div id="myPopUp" class="overlay">
         <a class="close-btn" onclick="closePopUp()">&times;</a>
         <div class="overlay-content">
-            <h1>Help Page</h1>
-            <p>Please refer to the <a href="/docs">documentation</a> for help and information.</p>
-            <p>
-                The content of the documentation can be configured by editing the markdown file
-                <code>documentation.md</code> in the root directory of this project.
-                The changes should be visible instantly after saving the file.
-            </p>
+            <h1>Info</h1>
+            <h2>
+                <a target="_blank" href="https://github.com/nsde/orbit">
+                    Click here to open the GitHub repository.
+                </a>
+            </h2>
         </div>
     </div>  

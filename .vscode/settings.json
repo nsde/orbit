@@ -20,7 +20,8 @@
         "orbit/forms/__pycache__": true,
         "orbit/static/stylesheets/space.css": true,
         "orbit/static/stylesheets/space.css.map": true,
-        "orbit/static/stylesheets/bi.css": true
+        "orbit/static/stylesheets/bi.css": true,
+        "orbit/root/__pycache__": true
     },
     "hide-files.files": [
         ".vscode",
@@ -35,6 +36,7 @@
         "orbit/forms/__pycache__",
         "orbit/static/stylesheets/space.css",
         "orbit/static/stylesheets/space.css.map",
-        "orbit/static/stylesheets/bi.css"
+        "orbit/static/stylesheets/bi.css",
+        "orbit/root/__pycache__"
     ]
 }

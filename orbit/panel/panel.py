@@ -24,6 +24,11 @@ def homepage():
     """Renders the homepage"""
     return flask.render_template('panel/templates/home.html')
 
+@panel_bp.route('/contribview')
+def contribview_home():
+    """Renders the contribview page"""
+    return flask.render_template('panel/templates/contribview.html')
+
 @panel_bp.route('/proxies')
 def proxies_page():
     """Renders the proxy list"""

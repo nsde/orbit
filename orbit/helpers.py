@@ -1,4 +1,6 @@
 import json
+import base64
+import requests
 import pandas as pd
 
 def read_json(filename: str):
@@ -25,3 +27,24 @@ def dict_to_table(input_data: dict) -> str:
     </table>
     """
     return table
+
+def get_css(sheets):
+    css = ''
+    
+    for sheet in sheets:
+        css += f'/* {"="*20}{sheet}{"="*20} */\n'
+        
+        if '://' in sheet:
+            css += requests.get(sheet).text.replace('\n', '')
+        else:
+            with open(f'orbit/static/stylesheets/{sheet}.css') as f:
+                css += f.read().replace('\n', '')
+
+        css += '\n'
+
+    return css
+
+def base64_source(url: str) -> str:
+    data = str(base64.b64encode(requests.get(url).content))
+    data = data[2:]
+    return f'data:image/png;base64,{data[:-3]}'

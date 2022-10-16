@@ -10,6 +10,11 @@
         "name": "ProxyList"
     },
     {
+        "path": "contribview",
+        "icon": "github",
+        "name": "ContribView"
+    },
+    {
         "path": "redirect/to/https://github.com/nsde/orbit/blob/master/README.md",
         "icon": "journal-text",
         "name": "Help",

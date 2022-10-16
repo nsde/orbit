@@ -15,14 +15,17 @@ def create_app():
 
     app = flask.Flask(__name__)
     app.secret_key = os.getenv('FLASK_SECRET_KEY')
+
     app.jinja_env.trim_blocks = True
     app.jinja_env.lstrip_blocks = True
 
     app.config['MAX_CONTENT_LENGTH'] = UPLOAD_LIMIT_MB * 1024 * 1024
 
+    from orbit.api.api import api_bp
     from orbit.root.root import root_bp
     from orbit.panel.panel import panel_bp
 
+    app.register_blueprint(api_bp, url_prefix='/')
     app.register_blueprint(root_bp, url_prefix='/')
     app.register_blueprint(panel_bp, url_prefix='/')
 

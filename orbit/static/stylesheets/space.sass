@@ -5,7 +5,7 @@
 
 header.grid
     display: grid
-    // grid-template-columns: auto auto auto
+    grid-template-columns: auto auto auto
 
     a
         color: inherit
@@ -21,9 +21,62 @@ header.grid
             opacity: 0.8
 
         img
+            width: 100%
             object-fit: cover
             height: 300px
 
 @media (max-width: 767px)
     header.grid div.featured img
         width: 100%
+
+div.embed
+    text-align: center
+    overflow: hidden
+
+    .embed-title
+        margin-block: 0.5rem
+
+.info-text
+    opacity: 0.5
+    margin-block: 0.5rem
+
+div.mini-list
+    width: 100%
+    display: flex
+    
+    flex: 1 1 0px
+    flex-wrap: wrap
+    flex-direction: row
+    
+    justify-content: center
+
+    div.mini-item
+        margin: 1rem
+        width: 100px
+        text-align: center
+        
+        img, svg
+            border-radius: 50%
+
+code
+    font-family: monospace
+
+input.slim
+    font-size: 1.2rem
+    width: 17ch
+
+@keyframes blitz
+    from
+        text-shadow: 0 0 10px $semi-transparent
+
+    to
+        text-shadow: none
+
+.glow-blitz
+    cursor: pointer
+
+    &:hover
+        color: $bg-dark
+    
+    &:active
+        color: $primary

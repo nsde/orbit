@@ -1,0 +1,70 @@
+{% with title="ContribView" %}
+    {% include "components/top.html" %}
+{% endwith %}
+
+{% with page="contribview" %}
+    {% include "components/sidebar.html" %}
+{% endwith %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<main class="has-sidebar">
+    <h1>ContribView</h1>
+    <p>
+        <i>ContribView</i> is a simple widgets which displays your GitHub repository contributors.<br>
+    </p>
+    
+    <h2>Get started</h2>
+    <p>
+        Quickly fill out the following:
+        <br>
+        <input id="user-i" class="slim" placeholder="User/Organization">
+        <span style="font-size: 2rem;">/</span>
+        <input id="repo-i" class="slim" placeholder="Repository">
+    </p>
+    <p>
+        And then simply add this line to your <code>README.md</code>:
+    </p>
+    <code id="output" class="glow-blitz" onclick="copy()">
+        ![](https://orbit.onlix.me/contribview/<strong id="user-o"></strong>/<strong id="repo-o"></strong>)
+    </code>
+    <h6>Click to copy ↑ </h6>
+    
+    <h2>Example</h2>
+    <p>This is the ContribView widget for the project <i>vanilla-installer</i> by <i>Fabulously-Optimized</i>:</p>
+    <img
+        src="https://camo.githubusercontent.com/0652dbc0b346da429d98b8071b514f0061c5dda2b78c4d2e865e811cbc1a70ac/68747470733a2f2f6f726269742e6f6e6c69782e6d652f636f6e74726962766965772f466162756c6f75736c792d4f7074696d697a65642f76616e696c6c612d696e7374616c6c65723f62657461"
+        alt="Widget example"
+    />
+</main>
+
+<script>
+    function update() {
+        $("#output").css("animation", "blitz 0.3s ease-out");
+    }
+
+    function updateUser() {
+        $("#user-o").text($("#user-i").val());
+        update();
+    }
+    function updateRepo() {
+        $("#repo-o").text($("#repo-i").val());
+        update();
+    }
+
+    updateUser();
+    updateRepo();
+
+    $("#user-i").on('change keydown paste input', function(){updateUser()});
+    $("#repo-i").on('change keydown paste input', function(){updateRepo()});
+
+    function copy() {
+        user = $("#user-i").val();
+        repo = $("#repo-i").val();
+        
+        var url = `https://orbit.onlix.me/contribview/${user}/${repo}`;
+        navigator.clipboard.writeText(url);
+    }
+</script>
+
+{% include "components/end.html" %}
